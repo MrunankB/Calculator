@@ -1,0 +1,184 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+
+h1 {
+    font-size: 20px;
+    font-family: Courier New;
+    color: white;
+}
+
+button {
+    border-radius: 10px;
+    border: blue;
+    outline: blue;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: red;
+    border-radius: 10px;
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(140px, auto) repeat(5, 50.7px);
+}
+
+.calculator-grid>button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid black;
+    outline: none;
+    background-color: rgba(255, 13, 13, 0.75);
+}
+
+
+.span-two {
+    grid-column: span 2;
+}
+
+.span-four {
+    grid-column: span 4;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgb(39, 28, 100);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 7px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 10px;
+    
+}
+.output:hover {
+  transform:scale(1.2,1.2);
+  -webkit-transform:scale(1.2,1.2);
+  -moz-transform:scale(1.2,1.2);
+}
+.output .current-operand {
+    font-family: "courier new";
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+}
+
+.output .previous-operand {
+    font-family: "courier new";
+    color: rgb(255, 0, 0);
+    font-size: 11px;
+}
+
+button {
+  
+  font-size: 35px;
+  background-color:red;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  border: 0;
+  outline: 0;
+  border-radius: 15px;
+}
+
+
+button:after {
+  content: ' ';
+  position: absolute;
+  opacity: 0;  
+  top: 14px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover{
+  padding-right: 24px;
+  padding-left:8px;
+}
+
+button:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+h1 {
+  font-size: 80px;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+}
+h2 {
+  font-size: 35px;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+}
+body {
+  background-color: rgb(255, 255, 255);
+}
+button {
+   
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+button:active {
+    color: #000
+}
+
+button:active:after {
+    background: transparent;
+}
+
+button:hover:before {
+    opacity: 1;
+}
+
+button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
